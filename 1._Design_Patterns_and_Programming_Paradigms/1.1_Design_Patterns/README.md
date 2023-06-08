@@ -4,7 +4,12 @@
   - [싱글톤 패턴 예시](#데이터베이스-연결-모듈)
   - [싱글톤 패턴의 단점](#싱글톤-패턴의-단점)
   - [의존성 주입](#의존성-주입)
-  
+- [1.1.2 팩토리 패턴](#1.1.2-팩토리-패턴)
+  - [자바스크립트의 팩토리 패턴](#자바스크립트의-팩토리-패턴)
+  - [자바의 팩토리 패턴](#자바의-팩토리-패턴)
+  - [Java의 Enum](#Java의-Enum)
+
+
 </br>
 
 ---
@@ -158,7 +163,115 @@ main module이 직접 하위 모듈에 대한 의존성을 부여하는게 아�
 
 
 
+</br>
 
+---
+# 1.1.2 팩토리 패턴
+## 팩토리 패턴(factory pattern)
+- 객체를 사용하는 코드에서 객체 생성부분을 떼어내 추상화한 패턴
+- 상속관계에 있는 두 클래스 중 상위 클래스가 뼈대 결정, 하위 클래스가 객체 생성에 대한 구체적인 내용을 결정
+
+- 장점
+  - 상위/하위가 분리되기 때문에 느슨한 결합을 가짐.
+  - 상위 클래스에서 인스턴스 생성 방식에 대해 몰라도 되서 유연함. 
+  - 유지보수에 용이. 코드 리팩토링 시에도 생성부분이 떼어져 있어서 한 곳만 고칠 수 있음
+
+ex. 라떼 레시피, 아메리카노 레시피, 우유 레시피 (하위 클래스) -> 바리스타 공장(상위 클래스)
+
+<br/>
+
+
+### 자바스크립트의 팩토리 패턴
+```javascript
+class Latte {
+    constructor() {
+        this.name = "Latte"
+    }
+}
+
+class Espresso {
+    constructor() {
+        this.name = "Espresso"
+    }
+}
+
+class LatteFactory {
+    static createCoffee() {
+        return new Latte()
+    }
+}
+
+class EspressoFactory {
+    static createCoffee() {
+        return new Espresso()
+    }
+}
+
+
+const factoryList = { LatteFactory, EspressoFactory }
+
+class CoffeeFactory {
+    // static 키워드를 통해 정적 메소드 선언 - 클래스 기반으로 객체를 만들지 않고 호출 가능
+    // 해당 메서드에 메모리 할당을 한 번만 할 수 있는 장점이 있다.
+    static createCoffee(type) {
+        const factory = factoryList[type]
+        return factory.createCoffee
+    }
+}
+
+const main = () => {
+    // 라떼 커피를 주문한다.
+    // 의존성 주입 - LatteFactory에서 생성한 인스턴스를 CoffeeFactory에 주입
+    const coffee = CoffeeFactory.createCoffee("LatteFactory")
+    // 커피 이름 호출
+    console.log(coffee.name) // latte
+}
+
+main()
+```
+
+### 자바의 팩토리 패턴
+
+1. abstract class인 Coffee를 만들고, getPrice라는 public abstract 메서드도 정의한다.
+2. extends키워드로 Coffee를 상속받은 DefaultCoffee, Latte, Americano 를 정의한다.
+3. class CoffeeFactory 를 만들고, 내부에 Coffee를 리턴하는 static 함수인 getCoffee(String type, int price) 메서드를 만든다.
+<br/>(그리고 getCoffee 호출 할때 type에 원하는 커피 이름을 넣으면 완성!)
+
+<br/>
+
+### Java의 Enum
+
+- 자바는 enum에 상수 뿐만 아니라 메서드를 집어넣어 관리 가능
+- enum으로 관리 시 장점
+  - 리팩토링 중 상수 집합 로직 수정 시 이 부분만 수정하면 됨,
+  - thread safe 해서 싱글톤 패턴을 만들 때 도움이 됨.
+
+
+```java
+// enum으로 만든 싱글톤 예시
+public enum SingletonEnum {
+    INSTANCE;
+
+    // 싱글톤 클래스의 멤버 변수나 메서드를 추가할 수 있음
+    private int value;
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+}
+```
+위의 코드에서는 SingletonEnum이라는 Enum을 정의하고, INSTANCE라는 단일 열거 상수를 선언한다.
+
+이 Enum은 자체적으로 싱글톤으로 정의되며, 어디서든 접근할 수 있는 단일 인스턴스를 보장한다.
+```java
+SingletonEnum instance = SingletonEnum.INSTANCE;
+instance.setValue(10);
+System.out.println(instance.getValue()); // 출력: 10
+```
 
 
 
