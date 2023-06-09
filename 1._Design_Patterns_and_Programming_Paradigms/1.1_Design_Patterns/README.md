@@ -8,7 +8,9 @@
   - [자바스크립트의 팩토리 패턴](#자바스크립트의-팩토리-패턴)
   - [자바의 팩토리 패턴](#자바의-팩토리-패턴)
   - [Java의 Enum](#Java의-Enum)
-
+- [1.1.3 전략 패턴](#1.1.3-전략-패턴)
+  - [passport 라이브러리에서의 전략패턴](#passport-라이브러리에서의-전략패턴)
+  - [컨텍스트](#컨텍스트)
 
 </br>
 
@@ -272,6 +274,52 @@ SingletonEnum instance = SingletonEnum.INSTANCE;
 instance.setValue(10);
 System.out.println(instance.getValue()); // 출력: 10
 ```
+
+
+
+# 1.1.3 전략 패턴
+## 전략 패턴(strategy pattern)
+### 정의
+- 정책 패턴(policy pattern)이라고도 함.
+- 객체의 행위를 바꾸고 싶은 경우 캡슐화한 알고리즘(전략)을 컨텍스 안에서 바꿔주면서 상호 교체가 가능
+<br/>
+ex.구매 프로세스 - 결제 방식(네이버 페이, 카카오 페이) 전략을 변경하는 경우
+
+<br/>
+
+### passport 라이브러리에서의 전략패턴
+- passport : node.js에서 인증 모듈을 구현할 때 쓰는 미들웨어 라이브러리
+- Local strategy : 서비스 내의 회원가입된 아이디와 비밀번호를 기반으로 인증
+- OAuth strategy : 페이스북, 네이버 계정으로 로그인
+
+```javascript
+var passport = require('passport')
+    , LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        user.findOne({ username: username }, function(err, user) {
+            if (err) { return done(err); }
+            if (!user) {
+                return done(null, false, { Message: 'Incorrect username.' });
+            }
+            if (!user.validPassword(password)) {
+                return done(null, false, { Message: 'Incorrect password.' });
+            }
+            return done(null, user);
+        })
+    }
+));
+```
+passport.user()라는 메서드에 '전략'을 파라미터로 넣어서 로직을 수행함.
+
+<br/>
+
+### 컨텍스트
+프로그래밍에서 컨텍스트는 상황, 맥락, 문맥을 의미. 개발자가 어떤 작업을 완료하는데 필요한 모든 관련정보를 의미한다.
+
+
+
 
 
 
