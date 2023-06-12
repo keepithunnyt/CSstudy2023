@@ -1,16 +1,21 @@
 # 1.1 Design Patterns
 
-- [1.1.1 싱글톤 패턴](#1.1.1-싱글톤-패턴)
+- [1.1.1 싱글톤 패턴](#111-싱글톤-패턴)
   - [싱글톤 패턴 예시](#데이터베이스-연결-모듈)
   - [싱글톤 패턴의 단점](#싱글톤-패턴의-단점)
   - [의존성 주입](#의존성-주입)
-- [1.1.2 팩토리 패턴](#1.1.2-팩토리-패턴)
+- [1.1.2 팩토리 패턴](#112-팩토리-패턴)
   - [자바스크립트의 팩토리 패턴](#자바스크립트의-팩토리-패턴)
   - [자바의 팩토리 패턴](#자바의-팩토리-패턴)
-  - [Java의 Enum](#Java의-Enum)
-- [1.1.3 전략 패턴](#1.1.3-전략-패턴)
+  - [Java의 Enum](#java의-enum)
+- [1.1.3 전략 패턴](#113-전략-패턴)
   - [passport 라이브러리에서의 전략패턴](#passport-라이브러리에서의-전략패턴)
   - [컨텍스트](#컨텍스트)
+- [1.1.4 옵저버 패턴](#114-옵저버-패턴)
+  -  [자바: 상속과 구현](#자바-상속과-구현)
+  -  [자바스크립트에서의 옵저버 패턴](#자바스크립트에서의-옵저버-패턴)
+  -  [프록시 객체를 이용한 옵저버 패턴](#프록시-객체를-이용한-옵저버-패턴)
+  -  [Vue.js 3.0에서의 옵저버 패턴](#vuejs-30에서의-옵저버-패턴)
 
 </br>
 
@@ -274,8 +279,9 @@ SingletonEnum instance = SingletonEnum.INSTANCE;
 instance.setValue(10);
 System.out.println(instance.getValue()); // 출력: 10
 ```
+<br/>
 
-
+---
 
 # 1.1.3 전략 패턴
 ## 전략 패턴(strategy pattern)
@@ -318,7 +324,117 @@ passport.user()라는 메서드에 '전략'을 파라미터로 넣어서 로직�
 ### 컨텍스트
 프로그래밍에서 컨텍스트는 상황, 맥락, 문맥을 의미. 개발자가 어떤 작업을 완료하는데 필요한 모든 관련정보를 의미한다.
 
+<br/>
 
+---
+
+# 1.1.4 옵저버 패턴
+## 옵저버 패턴(observer pattern)
+- 어떤 객체(subject) 의 상태 변화를 관찰하다가, 변화가 발생하면 메서드 등을 통해 옵저버 목록에 있는 옵저버들에게 변화를 알려줌
+- 주체 : 객체의 상태 변화를 보고 있는 관찰자(객체와 주체가 합쳐진 경우도 있음)
+- 옵저버 : 객체의 상태 변화에 따라 추가 변화 사항이 생기는 객체들
+- ex. 트위터 : 내(옵저버)가 태민이(주체)를 팔로우 했다면, 태민이가 포스팅하면 알림이 팔림이 감.
+
+<br/>
+
+- 옵저버 패턴은 이벤트 기반 시스템에 사용, MVC(Model-View-Controller) 패턴에도 사용
+  - Model(주체)에서 변경사항이 생겨 update() 메서드로 View(옵저버)에게 알려주고 이를 기반으로 Controller가 작동
+
+<br/>
+
+
+### 자바: 상속과 구현
+
+- 상속(extends)
+  - 자식 클래스가 부모 클래스의 메서드 등을 상속받아 사용 및 자식 클래스에서 추가 확장 가능
+  - 재사용성, 중복성의 최소화
+- 구현(implements)
+  - 부모(interface)를 자식 클래스에서 재정의하여 구현하는 것
+  - 반드시 부모 클래스의 메서드를 재정의하여 구현해야 함
+- 상속과 구현의 차이
+  - 상속은 일반 클래스, abstract 클래스를 기반으로 구현
+  - 구현은 interface를 기반으로 구현
+
+<br/>
+
+### 자바스크립트에서의 옵저버 패턴
+- 프록시(proxy) 객체
+  - 어떤 대상의 기본적인 동작을 가로챌 수 있는 객체를 뜻함
+  - 자바스크립트에서 프록시 객체는 2개의 매개변수를 가짐
+    - **target** : 프록시할 대상
+    - **handler** : target 동작을 가로채고 어떤 동작을 할 것인지가 설정되어있는 함수
+
+
+```javascript
+const handler = { 
+    get: function(target, name) {
+        return name === 'name' ? '$(target.a) $(target.b)' : garget[name]
+    }
+}
+
+const p = new Proxy({a: 'Newjeans', b:'are cute'}, handler)
+console.log(p.name)
+```
+new Proxy로 a 와 b 속성을 가진 객체와 handler 함수를 매개변수로 넣고, p라는 변수를 선언한다.
+
+이후 p의 특정 속성인 name에 접근 시, 이 부분을 가로채서 a와 b를 합쳐 문자열을 만드는 로직을 강제할 수 있는 것이 프록시 객체이다.
+
+<br/>
+
+### 프록시 객체를 이용한 옵저버 패턴
+```javascript
+// 옵저버를 나타내는 Observer 클래스
+class Observer {
+  update(data) {
+    console.log(`Received update: ${data}`);
+  }
+}
+
+// 주제를 나타내는 Subject 클래스
+class Subject {
+  constructor() {
+    this.observers = [];
+  }
+
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  removeObserver(observer) {
+    this.observers = this.observers.filter(obs => obs !== observer);
+  }
+
+  notify(data) {
+    this.observers.forEach(observer => observer.update(data));
+  }
+}
+
+// 사용 예시
+const subject = new Subject();
+
+const observer1 = new Observer();
+const observer2 = new Observer();
+
+subject.addObserver(observer1);
+subject.addObserver(observer2);
+
+subject.notify('Hello, world!');
+
+subject.removeObserver(observer1);
+
+subject.notify('Another update');
+```
+
+실행 결과
+```javascript
+Received update: Hello, world!
+Received update: Hello, world!
+Received update: Another update
+```
+
+
+### Vue.js 3.0에서의 옵저버 패턴
+- ref나 reactive로 정의하면 해당 값이 변경되었을 때 자동으로 DOM(Document Object Model)에 있는 값이 변경됨 (책의 예시는 너무 어려워서 생략.)
 
 
 
