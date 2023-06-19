@@ -10,7 +10,7 @@
    - 1.1.8 MVC Pattern
    - 1.1.9 MVP Pattern
    - 1.1.10 MVVM Pattern
-## 1.2 Programming Paradigms
+## [1.2 Programming Paradigms](https://github.com/ddyokim/CSstudy2023/tree/main/1._Design_Patterns_and_Programming_Paradigms/1.2_Programming_Paradigms)
    - 1.2.1 Declarative and Functional Programming
    - 1.2.2 Object-Oriented Programming
    - 1.2.3 Procedural Programming
