@@ -19,8 +19,8 @@
 </br>
 
 
-# Chapter 2: Networking
-## 2.1 Fundamentals of Networking
+# [Chapter 2: Networking](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking)
+## [2.1 Fundamentals of Networking](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking/2.1_Fundamentals_of_Networking)
    - 2.1.1 Throughput and Latency
    - 2.1.2 Network Topology and Bottleneck
    - 2.1.3 Network Classification
