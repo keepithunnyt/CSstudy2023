@@ -7,7 +7,10 @@
 - [2.1.2 네트워크 토폴로지와 병목 현상](#212-네트워크-토폴로지와-병목-현상)
   - [네트워크 토폴로지(network topology)](#네트워크-토폴로지network-topology)
   - [병목 현상(bottleneck)](#병목-현상bottleneck)
-  
+- [2.1.3 네트워크 분류](#213-네트워크-분류)
+  - [LAN (Local Area Network)](#lan-local-area-network)
+  - [MAN (Metropolitan Area Network)](#man-metropolitan-area-network)
+  - [WAN (Wide Area Network)](#wan-wide-area-network)
 </br>
 
 ---
@@ -84,3 +87,21 @@
 ## 병목 현상(bottleneck)
 - 전체 시스템의 성능/용량이 하나의 구성 요소로 인해 제한 받는 현상. (ex. 많은 트래픽이 관리되지 못해서 유저가 사이트에 진입하지 못하는 경우.)
 - 토폴로지 구성에 따라 병목현상을 올바르게 처리할 수 있다.
+
+---
+
+# 2.1.3 네트워크 분류
+## LAN (Local Area Network)
+- 근거리 통신망
+- 같은 건물이나 캠퍼스 같이 좁은 공간에서 운영
+- 전송 속도가 빠르고 혼잡하지 않다.
+
+## MAN (Metropolitan Area Network)
+- 대도시 지역 네트워크를 나타냄
+- 도시같이 넓은 지역에서 운영
+- 전송 속도는 평균이며 LAN보다는 더 혼잡함
+
+## WAN (Wide Area Network)
+- 광역 네트워크
+- 국가, 대륙 등 더 넓은 지역에서 운영
+- 전송 속도는 낮으며 MAN보다 혼잡하다.
