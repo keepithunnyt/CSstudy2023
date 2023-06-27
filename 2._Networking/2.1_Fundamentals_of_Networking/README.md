@@ -11,6 +11,14 @@
   - [LAN (Local Area Network)](#lan-local-area-network)
   - [MAN (Metropolitan Area Network)](#man-metropolitan-area-network)
   - [WAN (Wide Area Network)](#wan-wide-area-network)
+- [2.1.4 네트워크 성능 분석 명령어](#214-네트워크-성능-분석-명령어)
+  - [PING(Packet INternet Groper)](#pingpacket-internet-groper)
+  - [netstat](#netstat)
+  - [nslookup](#nslookup)
+  - [tracert](#tracert)
+- [2.1.5 네트워크 프로토콜 표준화](#215-네트워크-프로토콜-표준화)
+
+
 </br>
 
 ---
@@ -105,3 +113,46 @@
 - 광역 네트워크
 - 국가, 대륙 등 더 넓은 지역에서 운영
 - 전송 속도는 낮으며 MAN보다 혼잡하다.
+
+---
+
+<br/>
+
+# 2.1.4 네트워크 성능 분석 명령어
+- 네트워크 병목현상의 원인
+  - 네트워크 대역폭
+  - 네트워크 토폴로지
+  - 서버 CPU, 메모리 사용량
+  - 비효율적인 네트워크 구성
+
+<br/>
+
+## PING(Packet INternet Groper)
+- 네트워크 상태를 확인하려는 대상 노드를 향해 일정 크기의 패킷을 전송하는 명령어
+- ping은 TCP/IP 프로토콜중 ICMP 프로토콜을 통해 동작
+  - ICMP 프로토콜을 지원하지 않는 기기가 대상이거나, 네트워크 정책상 ICMP나 traceroute를 차단하는 대상이면 테스팅 불가능하다.
+- ping www.google.com -n 12
+  - 12번의 패킷을 보내고 12번의 패킷을 받음.
+
+## netstat
+- 접속되어있는 서비스들의 네트워크 상태를 표시하는데 사용
+- 네트워크 접속, 라우팅 테이블, 네트워크 프로토콜 등 리스트를 보여준다.
+  - 주로 서비스 포트가 열려있는지 확인할 때 사용
+
+## nslookup
+- DNS 관련 내용을 확인하는 명령어
+- 특정 도메인에 매핑된 IP를 확인하기 위해 사용
+
+## tracert
+- 윈도우 : tracert / 리눅스 : traceroute
+- 목적지 노드까지 네트워크 경로를 확인할 때 사용하는 명령어
+- 어느 구간에서 느린지 확인 가능
+
+<br/>
+
+---
+
+# 2.1.5 네트워크 프로토콜 표준화
+- IEEE, IETF라는 표준화 단체에서 프로토콜을 정함
+  - IEEE802.3 : 유선 LAN 프로토콜
+  - HTTP : 웹 접속 프로토콜
