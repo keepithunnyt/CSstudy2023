@@ -26,7 +26,7 @@
    - 2.1.3 Network Classification
    - 2.1.4 Network Performance Analysis Commands
    - 2.1.5 Network Protocol Standardization
-## 2.2 TCP/IP 4-Layer Model
+## [2.2 TCP/IP 4-Layer Model](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking/2.2_TCP_IP_4-Layer_Model)
    - 2.2.1 Layer Structure
    - 2.2.2 Protocol Data Unit (PDU)
 ## 2.3 Network Devices
