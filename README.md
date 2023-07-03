@@ -29,7 +29,7 @@
 ## [2.2 TCP/IP 4-Layer Model](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking/2.2_TCP_IP_4-Layer_Model)
    - 2.2.1 Layer Structure
    - 2.2.2 Protocol Data Unit (PDU)
-## 2.3 Network Devices
+## [2.3 Network Devices](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking/2.3_Network_Devices)
    - 2.3.1 Scope of Network Devices
    - 2.3.2 Devices Handling the Application Layer
    - 2.3.3 Devices Handling the Internet Layer

@@ -8,7 +8,13 @@
   - [무선 LAN을 이루는 주파수](#무선-lan을-이루는-주파수)
   - [이더넷 프레임](#이더넷-프레임)
   - [계층 간 송수신 과정](#계층-간-송수신-과정)
+- [2.2.2 PDU (Protocol Data Unit)](#222-pdu-protocol-data-unit)
+
+<br/>
+
 ---
+
+
 # 2.2.1 계층 구조
 - 인터넷 프로토콜 스위트(internet protocol suite)
 - TCP/IP 계층은 4개의 계층을 가지고 있음. OSI 7계층과 많이 비교함.
