@@ -35,7 +35,7 @@
    - 2.3.3 Devices Handling the Internet Layer
    - 2.3.4 Devices Handling the Data Link Layer
    - 2.3.5 Devices Handling the Physical Layer
-## 2.4 IP Address
+## [2.4 IP Address](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking/2.4_IP_Address)
    - 2.4.1 ARP (Address Resolution Protocol)
    - 2.4.2 Hop-by-Hop Communication
    - 2.4.3 IP Addressing Schemes
