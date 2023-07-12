@@ -8,7 +8,7 @@
   - [클래스 기반 할당 방식(classful network addressing)](#클래스-기반-할당-방식classful-network-addressing)
   - [DHCP(Dynamic Host Configuration Protocol)](#dhcpdynamic-host-configuration-protocol)
   - [NAT(Network Address Translation)](#natnetwork-address-translation)
-
+- [2.4.4 IP 주소를 이용한 위치 정보](#244-ip-주소를-이용한-위치-정보)
 
 <br/>
 
@@ -77,3 +77,12 @@
 - 여러 대의 호스트가 하나의 공인 IP 주소를 사용하여 인터넷에 접속하기 위해 NAT를 사용한다. (인터넷 공유기에 NAT 기능이 탑재되어 있다.)
 - 외부에 드러나는 IP주소를 다르게 할 수 있어서 네트워크에 대한 일정 수준의 보안이 가능
 - 단점 : 여러 멍이 동시에 인터넷에 접속하므로 실제 호스트 수에 따라 속도가 느려질 수 있다.
+
+
+<br/>
+
+---
+
+# 2.4.4 IP 주소를 이용한 위치 정보
+- IP 주소를 통해 동, 구 까지 위치 추적이 가능하다
+  - https://mylocation.co.kr
