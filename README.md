@@ -40,7 +40,7 @@
    - 2.4.2 Hop-by-Hop Communication
    - 2.4.3 IP Addressing Schemes
    - 2.4.4 IP Address-Based Geolocation
-## 2.5 HTTP
+## [2.5 HTTP](https://github.com/ddyokim/CSstudy2023/tree/main/2._Networking/2.5_HTTP)
    - 2.5.1 HTTP/1.0
    - 2.5.2 HTTP/1.1
    - 2.5.3 HTTP/2
