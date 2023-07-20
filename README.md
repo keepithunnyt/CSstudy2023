@@ -49,8 +49,8 @@
 ### Expected Questions
 </br>
 
-# Chapter 3: Operating Systems
-## 3.1 Operating Systems and Computers
+# [Chapter 3: Operating Systems](https://github.com/ddyokim/CSstudy2023/tree/main/3._Operating_Systems)
+## [3.1 Operating Systems and Computers](https://github.com/ddyokim/CSstudy2023/tree/main/3._Operating_Systems/3.1_Operating_Systems_and_Computers)
    - 3.1.1 Roles and Structure of Operating Systems
    - 3.1.2 Components of a Computer
 ## 3.2 Memory
