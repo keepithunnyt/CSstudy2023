@@ -56,7 +56,7 @@
 ## [3.2 Memory](https://github.com/ddyokim/CSstudy2023/tree/main/3._Operating_Systems/3.2_Memory)
    - 3.2.1 Memory Hierarchy
    - 3.2.2 Memory Management
-## 3.3 Processes and Threads
+## [3.3 Processes and Threads](https://github.com/ddyokim/CSstudy2023/tree/main/3._Operating_Systems/3.3_Processes_and_Threads)
    - 3.3.1 Processes and Compilation Process
    - 3.3.2 States of a Process
    - 3.3.3 Memory Structure of a Process
