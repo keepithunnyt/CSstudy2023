@@ -65,7 +65,7 @@
    - 3.3.6 Threads and Multithreading
    - 3.3.7 Shared Resources and Critical Sections
    - 3.3.8 Deadlock
-## 3.4 CPU Scheduling Algorithms
+## [3.4 CPU Scheduling Algorithms](https://github.com/ddyokim/CSstudy2023/tree/main/3._Operating_Systems/3.4_CPU_Scheduling_Algorithms)
    - 3.4.1 Non-preemptive Scheduling
    - 3.4.2 Preemptive Scheduling
 ### Expected Questions
