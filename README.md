@@ -73,8 +73,8 @@
 </br>
 
 
-# Chapter 4: Databases
-## 4.1 Basics of Databases
+# [Chapter 4: Databases](https://github.com/ddyokim/CSstudy2023/tree/main/4._Databases)
+## [4.1 Basics of Databases](https://github.com/ddyokim/CSstudy2023/tree/main/4._Databases/4.1_Basics_of_Databases)
    - 4.1.1 Entity
    - 4.1.2 Relation
    - 4.1.3 Attribute
