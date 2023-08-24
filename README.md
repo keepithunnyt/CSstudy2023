@@ -82,7 +82,7 @@
    - 4.1.5 Field and Record
    - 4.1.6 Relationship
    - 4.1.7 Key
-## 4.2 ERD and Normalization Process
+## [4.2 ERD and Normalization Process](https://github.com/ddyokim/CSstudy2023/tree/main/4._Databases/4.2_ERD_and_Normalization_Process)
    - 4.2.1 Importance of ERD
    - 4.2.2 Learning ERD through Examples
    - 4.2.3 Normalization Process
