@@ -86,7 +86,7 @@
    - 4.2.1 Importance of ERD
    - 4.2.2 Learning ERD through Examples
    - 4.2.3 Normalization Process
-## 4.3 Transactions and Integrity
+## [4.3 Transactions and Integrity](https://github.com/ddyokim/CSstudy2023/tree/main/4._Databases/4.3_Transactions_and_Integrity)
    - 4.3.1 Transactions
    - 4.3.2 Integrity
 ## 4.4 Types of Databases
